@@ -1,0 +1,22 @@
+def main():
+    n = int(input("amt numbers: "))
+    numbers = []
+    for i in range(n):
+        num = float(input(f"enter number {i+1}: "))
+        numbers.append(num)
+
+    max_index = numbers.index(max(numbers))
+    min_index = numbers.index(min(numbers))
+    numbers[max_index], numbers[min_index] = numbers[min_index], numbers[max_index]
+
+    print("list after changes max and min:", numbers)
+
+    average = sum(numbers) / len(numbers)
+    for i in range(len(numbers)):
+        if numbers[i] > average:
+            numbers[i] = 1
+
+    print("after replacing elements is larger than average 1:", numbers)
+
+if __name__ == "__main__":
+    main()
